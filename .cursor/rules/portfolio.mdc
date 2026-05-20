@@ -1,0 +1,125 @@
+---
+description: "Rules for Jose David's portfolio project"
+globs: ["**/*.ts", "**/*.tsx", "**/*.mdx", "**/*.json", "**/*.css"]
+alwaysApply: true
+---
+
+# Project: jdsa-portfolio
+
+## Identity & purpose
+This is the personal portfolio of Jose David Sanabria Aponte — Backend Engineer (Go, Python, C#) with FinTech and AI/Computer Vision experience. Audience is mixed: tech recruiters (LATAM + international), dev community (GitHub), and freelance clients. Visual tone: **minimalist refined**. Every decision must communicate seniority and precision.
+
+## Stack (non-negotiable)
+- Framework: **Next.js 15** with App Router
+- Language: **TypeScript** — strict mode, no `any`
+- Styling: **Tailwind CSS v4**
+- Animations: **Framer Motion**
+- Content: **MDX** files in `/content/projects/` parsed by **Velite**
+- Diagrams: **Mermaid** (inline in MDX) + **React Flow** (interactive, lazy-loaded)
+- Deploy target: **Vercel** — use `next/image`, `next/font`, Server Components by default
+- i18n: next-intl with `es` (default) and `en` locales
+
+## Typography system
+```
+Display: DM Serif Display (Google Fonts) — headings, hero name
+Mono: DM Mono — tags, code blocks, eyebrows, dates
+Body: Outfit (weights 300, 400, 500) — paragraph text, UI
+```
+Load all three via `next/font/google`. Never use Inter, Roboto, or system-ui as primary fonts.
+
+## Color system (CSS variables)
+```css
+--color-ink:        #111111;
+--color-ink-muted:  #6B7280;
+--color-ink-faint:  #9CA3AF;
+--color-paper:      #FFFFFF;
+--color-surface:    #F9FAFB;
+--color-border:     rgba(17,17,17,0.10);
+--color-border-md:  rgba(17,17,17,0.20);
+--color-accent:     #1A56DB;   /* used sparingly */
+```
+Dark mode: swap ink↔paper, surface to #111, border to rgba(255,255,255,0.10). Use `class="dark"` on `<html>` toggled by user preference.
+
+## Content schema (Velite)
+Each project in `/content/projects/[slug].mdx` has this frontmatter:
+```yaml
+title: string
+slug: string
+status: "active" | "completed" | "archived"
+period: string          # e.g. "Feb 2024 – Jan 2026"
+client: string          # e.g. "Mercado Pago" | "Personal"
+tags: string[]          # tech stack tags
+summary: string         # 1–2 sentences, shown in card
+featured: boolean
+order: number           # sort order in grid
+lang: "es" | "en"       # default content language
+```
+Body supports: standard markdown, Mermaid fenced blocks (` ```mermaid `), `<ReactFlowDiagram />` component, `<VideoEmbed />`, `<MetricCard />`.
+
+## Component architecture
+```
+app/
+  [locale]/
+    page.tsx             ← Hero + FeaturedProjects + Stats
+    projects/
+      page.tsx           ← ProjectGrid with filter
+      [slug]/page.tsx    ← Full MDX project page
+    about/page.tsx       ← Timeline CV + Skills grid
+layout.tsx               ← font vars, theme provider, nav
+
+components/
+  ui/
+    Tag.tsx              ← reusable pill/badge
+    MetricCard.tsx       ← stat display (num + label)
+    ProjectCard.tsx      ← card used in grid
+    Timeline.tsx         ← experience timeline
+  mdx/
+    ReactFlowDiagram.tsx ← lazy-loaded, accepts nodes/edges props
+    VideoEmbed.tsx       ← lazy iframe with poster
+    Mermaid.tsx          ← client component, renders mermaid
+  layout/
+    Nav.tsx
+    Footer.tsx
+  sections/
+    Hero.tsx
+    FeaturedProjects.tsx
+    Stats.tsx
+
+content/
+  projects/
+    vibewindows.mdx
+    holiday-portal.mdx
+    qr-interop-platform.mdx
+    petlandia-landing.mdx
+```
+
+## Coding conventions
+- Server Components by default. Add `"use client"` only when necessary (interactivity, hooks, browser APIs).
+- Lazy-load heavy components: `const ReactFlowDiagram = dynamic(() => import(...), { ssr: false })`.
+- All animations via Framer Motion `<motion.div>` — use `viewport={{ once: true }}` for scroll triggers.
+- Page-level animation: stagger children with `variants` and `staggerChildren: 0.08`.
+- No inline styles. No arbitrary Tailwind values unless absolutely necessary. Use CSS variables via `style={{ color: 'var(--color-ink-muted)' }}` when Tailwind doesn't cover it.
+- Images: always `next/image` with explicit `width`/`height` or `fill` + wrapper with `position: relative`.
+- Every public-facing component needs a brief JSDoc comment describing its purpose.
+
+## Project-specific context
+
+### VibeWindows
+Personal project (v0.2.2). WPF .NET 8 app: webcam → CaptureBroker → VisionSession → IVisionEngine (ONNX in-process or Python TCP :5757/5758) → GesturePolicy → PointerDriver → InjectionSafety (OFF by default). Kinect debug UI, multi-monitor virtual desktop, pinch gestures. Unified spec: `docs/VibeWindows.md`. React Flow diagram uses WUI layers (not legacy TCP-only pipeline). Status: MVP ~95%, M5 validation pending.
+
+### Holiday Integrator
+Freelance for Holiday Experiences S.A.S. **Separate project** from IFX/Zadarma compliance and cross-border contract sync. Core product: **Holiday Integrator** (`HolidayScraperApp`) — WPF + Playwright desktop app for parallel B2B portal price comparison, offer extraction, Union-Find aggregation, mosaic/list/map UI. Unified spec: `docs/HolidayIntegrator.md`. Status: active development.
+
+### QR Interop Platform (Mercado Pago)
+Feb 2024 – Jan 2026. Config-driven architecture for LATAM acquirer integrations in Go. Feature flag infrastructure for parallel development across 10+ acquirers. Key metric: ~80% reduction in integration lead time. Use Mermaid diagram for the config-driven flow.
+
+### Club House Petlandia
+Jan 2025. Static landing (HTML/CSS/JS vanilla) for pet boarding in Madrid, CO — WhatsApp conversion, local SEO, 3 pages. Deploy: GitHub Actions → OCI Object Storage → Cloudflare CDN purge. Unified spec: `docs/PetlandiaLandingPage.md`. Status: production at petlandiaclubhouse.com.
+
+## What NOT to do
+- Do not add a CMS or database — content lives in MDX files in Git, period.
+- Do not use `create-react-app` patterns or Pages Router conventions.
+- Do not add UI libraries (shadcn, MUI, Chakra) — design system is custom.
+- Do not use `useEffect` for data that can be fetched server-side.
+- Do not hardcode Spanish strings outside of MDX content — all UI strings go through next-intl.
+- Do not commit `*.env*` files.

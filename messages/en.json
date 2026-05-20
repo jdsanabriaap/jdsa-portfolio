@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About"
+  },
+  "hero": {
+    "eyebrow": "Backend Engineer · Go · Python · C#",
+    "name": "Jose David Sanabria Aponte",
+    "role": "Backend engineer with FinTech, automation, and AI / computer vision experience.",
+    "ctaProjects": "View projects",
+    "ctaAbout": "About me",
+    "statusAvailable": "Open to opportunities",
+    "statusProjects": "Active projects",
+    "statusStudies": "Current studies",
+    "statusStudiesLine": "AI Specialization — UNIR",
+    "projectVibewindows": "VibeWindows",
+    "projectHoliday": "Holiday Integrator"
+  },
+  "stats": {
+    "years": { "value": "6+", "label": "Years of experience" },
+    "acquirers": { "value": "10+", "label": "Acquirers integrated" },
+    "leadTime": { "value": "~80%", "label": "Lead time reduction (QR)" }
+  },
+  "home": {
+    "featuredTitle": "Featured projects",
+    "featuredSubtitle": "Recent work across FinTech, automation, CV, and static web."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Real cases with architecture, metrics, and technical diagrams.",
+    "filterAll": "All",
+    "filterAiCv": "AI·CV",
+    "filterFintech": "FinTech",
+    "filterAutomation": "Automation",
+    "filterWeb": "Web · Cloud",
+    "readMore": "View details",
+    "statusActive": "Active",
+    "statusCompleted": "Completed",
+    "statusArchived": "Archived"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Professional journey and technical stack.",
+    "skillsTitle": "Skills",
+    "skills": {
+      "languages": "Languages",
+      "backend": "Backend",
+      "aiCv": "AI · CV",
+      "devops": "DevOps"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  }
+}
