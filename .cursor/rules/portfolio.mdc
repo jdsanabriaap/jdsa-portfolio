@@ -90,6 +90,7 @@ content/
     vibewindows.mdx
     holiday-portal.mdx
     qr-interop-platform.mdx
+    integration-docs-mcp.mdx
     petlandia-landing.mdx
 ```
 
@@ -111,7 +112,10 @@ Personal project (v0.2.2). WPF .NET 8 app: webcam → CaptureBroker → VisionSe
 Freelance for Holiday Experiences S.A.S. **Separate project** from IFX/Zadarma compliance and cross-border contract sync. Core product: **Holiday Integrator** (`HolidayScraperApp`) — WPF + Playwright desktop app for parallel B2B portal price comparison, offer extraction, Union-Find aggregation, mosaic/list/map UI. Unified spec: `docs/HolidayIntegrator.md`. Status: active development.
 
 ### QR Interop Platform (Mercado Pago)
-Feb 2024 – Jan 2026. Config-driven architecture for LATAM acquirer integrations in Go. Feature flag infrastructure for parallel development across 10+ acquirers. Key metric: ~80% reduction in integration lead time. Use Mermaid diagram for the config-driven flow.
+Feb 2024 – Jan 2026. Config-driven architecture for LATAM acquirer integrations in Go. Feature flag infrastructure for parallel development across 10+ acquirers. Key metric: ~80% reduction in integration lead time. **Separate from** Integration Docs MCP below.
+
+### Integration Docs MCP (Mercado Pago)
+Separate development at **Mercado Pago** (not QR-only). Organization-wide **MCP server** with hexagonal-architecture **prompt-skill** for all **Mercado Pago integration teams** — automated developer docs (web + Markdown + Mermaid), kept in sync post-branch/release for AI and engineers.
 
 ### Club House Petlandia
 Jan 2025. Static landing (HTML/CSS/JS vanilla) for pet boarding in Madrid, CO — WhatsApp conversion, local SEO, 3 pages. Deploy: GitHub Actions → OCI Object Storage → Cloudflare CDN purge. Unified spec: `docs/PetlandiaLandingPage.md`. Status: production at petlandiaclubhouse.com.

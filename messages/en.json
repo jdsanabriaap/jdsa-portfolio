@@ -2,7 +2,8 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
-    "about": "About"
+    "about": "About",
+    "contact": "Contact"
   },
   "hero": {
     "eyebrow": "Backend Engineer · Go · Python · C#",
@@ -35,6 +36,8 @@
     "filterAutomation": "Automation",
     "filterWeb": "Web · Cloud",
     "readMore": "View details",
+    "recentTitle": "Recently viewed",
+    "recentSubtitle": "Projects you opened in this browser — handy if you come back after a reload.",
     "statusActive": "Active",
     "statusCompleted": "Completed",
     "statusArchived": "Archived"
@@ -52,6 +55,34 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Open to opportunities, technical consulting, and collaborations.",
+    "channelsTitle": "Direct links",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "formTitle": "Send a message",
+    "formHint": "Email opens in Gmail or Outlook in the browser (more reliable in Chrome). You can also use WhatsApp or your system mail app.",
+    "formName": "Name",
+    "formNamePlaceholder": "Your name",
+    "formSubject": "Subject",
+    "formSubjectPlaceholder": "E.g. Backend consulting, job opportunity…",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Tell me how I can help…",
+    "sendGmail": "Open in Gmail",
+    "sendOutlook": "Open in Outlook",
+    "sendWhatsApp": "Open WhatsApp",
+    "sendMailto": "email client",
+    "mailtoFallback": "Prefer a desktop app?",
+    "directEmail": "Or email me directly at",
+    "defaultSubject": "Contact from jdsa.dev",
+    "whatsappQuickMessage": "Hi Jose David, I'd like to get in touch from your portfolio.",
+    "draftLocal": "Draft saved in this browser.",
+    "clearDraft": "Clear draft"
   },
   "theme": {
     "light": "Light mode",

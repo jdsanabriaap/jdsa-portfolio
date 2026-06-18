@@ -22,6 +22,20 @@ export const timelineEntries: TimelineEntry[] = [
     ],
   },
   {
+    id: "mp-integration-mcp",
+    company: "Mercado Pago",
+    role: "Integration Docs MCP — prompt-skill",
+    period: "Feb 2024 – Ene 2026",
+    summary:
+      "MCP en Mercado Pago para equipos de integraciones: contexto hexagonal, docs web/.md y Mermaid, actualizada post-release.",
+    details: [
+      "Desarrollo independiente del flujo QR — alcance transversal en Mercado Pago",
+      "Prompt-skill con arquitectura hexagonal del dominio de integraciones",
+      "MCP compartido para todos los equipos de integraciones de Mercado Pago",
+      "Docs para IA y desarrolladores sincronizadas tras branch o release",
+    ],
+  },
+  {
     id: "petlandia",
     company: "Club House Petlandia",
     role: "Desarrollo web + despliegue cloud",

@@ -1,6 +1,7 @@
 "use client";
 
 import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
+import { RecentProjects } from "@/components/sections/RecentProjects";
 import { getAllProjects } from "@/lib/projects";
 import { useTranslations } from "next-intl";
 export default function ProjectsPage() {
@@ -17,6 +18,7 @@ export default function ProjectsPage() {
           {t("subtitle")}
         </p>
         <div className="mt-10">
+          <RecentProjects projects={projects} />
           <ProjectsGrid projects={projects} />
         </div>
       </div>

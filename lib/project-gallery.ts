@@ -6,6 +6,7 @@ export const projectGalleryManifest: Record<
   vibewindows: [],
   "holiday-portal": [],
   "qr-interop-platform": [],
+  "integration-docs-mcp": [],
   "petlandia-landing": [],
 };
 

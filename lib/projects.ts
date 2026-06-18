@@ -32,7 +32,7 @@ const FILTER_TAG_MAP: Record<Exclude<ProjectFilterCategory, "all">, string[]> =
       "IA",
       "AI",
     ],
-    fintech: ["FinTech", "Go", "Integraciones", "LATAM", "Feature Flags"],
+    fintech: ["FinTech", "Go", "Integraciones", "LATAM", "Feature Flags", "MCP", "Documentación"],
     automation: ["Automatización", "Selenium", "Playwright", "WPF"],
     web: [
       "HTML",

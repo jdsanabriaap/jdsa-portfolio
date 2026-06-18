@@ -1,14 +1,17 @@
 "use client";
 
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { usePersistedState } from "@/hooks/usePersistedState";
+import { isProjectFilterCategory } from "@/lib/projects-filter";
 import {
   projectMatchesFilter,
   type Project,
   type ProjectFilterCategory,
 } from "@/lib/projects";
+import { storageKeys } from "@/lib/storage-keys";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 const filters: { id: ProjectFilterCategory; labelKey: string }[] = [
   { id: "all", labelKey: "filterAll" },
@@ -25,8 +28,11 @@ type ProjectsGridProps = {
 /** Filterable project grid with layout animations. */
 export function ProjectsGrid({ projects }: ProjectsGridProps) {
   const t = useTranslations("projects");
-  const [activeFilter, setActiveFilter] =
-    useState<ProjectFilterCategory>("all");
+  const [activeFilter, setActiveFilter] = usePersistedState(
+    storageKeys.projectsFilter,
+    "all" satisfies ProjectFilterCategory,
+    isProjectFilterCategory,
+  );
 
   const filtered = useMemo(
     () => projects.filter((p) => projectMatchesFilter(p, activeFilter)),

@@ -1,4 +1,5 @@
 import { MDXContent } from "@/components/mdx/MDXContent";
+import { ProjectViewRecorder } from "@/components/projects/ProjectViewRecorder";
 import { Tag } from "@/components/ui/Tag";
 import { getAllProjects, getProjectBySlug } from "@/lib/projects";
 import { routing } from "@/i18n/routing";
@@ -42,6 +43,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <article className="py-[52px]">
+      <ProjectViewRecorder slug={slug} />
       <div className="mx-auto max-w-6xl px-6">
         <header className="mb-10 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-[var(--color-ink-faint)]">

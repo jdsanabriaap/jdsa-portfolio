@@ -2,7 +2,8 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
-    "about": "Sobre mí"
+    "about": "Sobre mí",
+    "contact": "Contacto"
   },
   "hero": {
     "eyebrow": "Backend Engineer · Go · Python · C#",
@@ -35,6 +36,8 @@
     "filterAutomation": "Automatización",
     "filterWeb": "Web · Cloud",
     "readMore": "Ver detalle",
+    "recentTitle": "Vistos recientemente",
+    "recentSubtitle": "Proyectos que abriste en este navegador — útil si vuelves tras recargar la página.",
     "statusActive": "Activo",
     "statusCompleted": "Completado",
     "statusArchived": "Archivado"
@@ -52,6 +55,34 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Disponible para oportunidades, consultoría técnica y colaboraciones.",
+    "channelsTitle": "Enlaces directos",
+    "emailLabel": "Correo",
+    "phoneLabel": "Celular",
+    "whatsappLabel": "WhatsApp",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "formTitle": "Enviar mensaje",
+    "formHint": "El correo se abre en Gmail u Outlook en el navegador (más fiable en Chrome). También puedes usar WhatsApp o el cliente de correo del sistema.",
+    "formName": "Nombre",
+    "formNamePlaceholder": "Tu nombre",
+    "formSubject": "Asunto",
+    "formSubjectPlaceholder": "Ej. Consultoría backend, oportunidad laboral…",
+    "formMessage": "Mensaje",
+    "formMessagePlaceholder": "Cuéntame en qué puedo ayudarte…",
+    "sendGmail": "Abrir en Gmail",
+    "sendOutlook": "Abrir en Outlook",
+    "sendWhatsApp": "Abrir WhatsApp",
+    "sendMailto": "cliente de correo",
+    "mailtoFallback": "Si prefieres la app del sistema:",
+    "directEmail": "O escribe directamente a",
+    "defaultSubject": "Contacto desde jdsa.dev",
+    "whatsappQuickMessage": "Hola Jose David, me gustaría contactarte desde tu portfolio.",
+    "draftLocal": "Borrador guardado en este navegador.",
+    "clearDraft": "Limpiar borrador"
   },
   "theme": {
     "light": "Modo claro",

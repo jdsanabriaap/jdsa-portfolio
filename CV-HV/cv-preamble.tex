@@ -1,0 +1,33 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\definecolor{accent}{HTML}{1A56DB}
+\definecolor{dark}{HTML}{111827}
+\definecolor{mid}{HTML}{374151}
+\definecolor{light}{HTML}{6B7280}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}
+  {\uppercase}
+  [{\color{accent}\titlerule[0.6pt]}]
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\setlist[itemize,1]{leftmargin=0.18in, labelsep=2mm, itemsep=1pt, topsep=2pt, parsep=0pt}
+\setlist[itemize,2]{leftmargin=0.28in, labelsep=2mm, itemsep=0pt, topsep=1pt, parsep=0pt,
+                    label=\textcolor{light}{\textendash}}
+
+\newcommand{\jobtitle}[4]{%
+  \noindent\textbf{\color{dark}#1} \hfill \textit{\color{light}#3} \\
+  \textbf{\color{accent}#2} \hfill \textcolor{light}{#4}
+  \vspace{1pt}
+}
